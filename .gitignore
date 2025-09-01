@@ -1,0 +1,28 @@
+# Node modules
+node_modules/
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+# OS
+.DS_Store
+Thumbs.db
+# Env
+.env
+.env.*
+# Editor
+.vscode/
+# Build
+/dist/
+/build/
+# Web
+/to-do-web/node_modules/
+/to-do-web/dist/
+/to-do-web/build/
+# API
+/to-do-api/node_modules/
+/to-do-api/dist/
+/to-do-api/build/
+# Others
+*.local
+*.log

@@ -8,7 +8,16 @@ app.use(cors());
 app.use(express.json());
 
 // Configuración de Redis
-const redisClient = createClient();
+const redisUrl = process.env.REDIS_URL || "redis://localhost:6379"; // <- local por default
+
+const redisClient = createClient({
+  url: redisUrl,
+  socket: {
+    tls:
+      redisUrl.startsWith("rediss://") || redisUrl.startsWith("redis+ssl://"),
+    rejectUnauthorized: false,
+  },
+});
 redisClient.connect().catch(console.error);
 
 // Helper para generar IDs únicos

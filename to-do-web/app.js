@@ -5,7 +5,7 @@ async function editTask(id, newText) {
     body: JSON.stringify({ text: newText }),
   });
 }
-const API_URL = "http://localhost:3000/tasks";
+const API_URL = process.env.API_URL || "http://localhost:3000/tasks";
 
 async function fetchTasks() {
   const res = await fetch(API_URL);
